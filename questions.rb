@@ -67,7 +67,7 @@ end
 # even numbers come first
 # so [1, 2, 3, 4, 5, 6] becomes [[2, 4, 6], [1, 3, 5]]
 def separate_array_into_even_and_odd_numbers(array)
-  
+  array.group_by{|n| n.odd?}.values.reverse
 end
 
 # count the numbers of elements in an element which are palindromes
@@ -151,7 +151,8 @@ end
 # take out all the capital letters from a string
 # so 'Hello JohnDoe' becomes 'ello ohnoe'
 def remove_capital_letters_from_string(string)
-  
+  # string.split(/[A-Z]/).join
+  string.gsub(/[A-Z]/, '') 
 end
 
 # round up a float up and convert it to an Integer,
